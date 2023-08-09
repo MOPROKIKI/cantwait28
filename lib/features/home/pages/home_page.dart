@@ -40,7 +40,7 @@ class _HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCubit(ItemsRepository ())..start(),
+      create: (context) => HomeCubit(ItemsRepository())..start(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           final itemModels = state.items;
@@ -151,7 +151,7 @@ class _ListViewItem extends StatelessWidget {
                   ),
                   margin: const EdgeInsets.all(10),
                   padding: const EdgeInsets.all(10),
-                  child:  Column(
+                  child: Column(
                     children: [
                       Text(
                         itemModel.daysLeft(),
