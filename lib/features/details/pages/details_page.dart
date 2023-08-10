@@ -1,6 +1,7 @@
 import 'package:cantwait28/features/details/cubit/details_cubit.dart';
 import 'package:cantwait28/models/item_model.dart';
 import 'package:cantwait28/repositories/items_repository.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,8 +22,13 @@ class DetailsPage extends StatelessWidget {
       body: const _DetailsPageBody(),
     );
   }
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('id', id));
+  }
 }
-
+ 
 class _DetailsPageBody extends StatelessWidget {
   const _DetailsPageBody({
     Key? key,
